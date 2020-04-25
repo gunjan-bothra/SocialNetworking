@@ -1,42 +1,38 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Facebook from './components/facebook';
+// import Facebook from './components/facebook';
 import Google from './components/google';
-// import FacebookLogin from 'react-facebook-login';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import SignIn from './components/signin';
+// import {useRoutes} from 'hookrouter';
+import Home from './pages/Home';
+// import {Route, Link, BrowserRouter as Router, Switch} from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 
-// import GoogleLogin from 'react-google-login';
+const routes = {
+  '/': () => <Login />,
+  '/Home': () => <Home />,
+  '/SignIn': () => <SignIn />,
+};
 
-// import Amplify from 'aws-amplify';
-// import awsconfig from './aws-exports';
-// import { withAuthenticator } from 'aws-amplify-react'; // or 'aws-amplify-react-native';
-// import '@aws-amplify/ui/dist/style.css';
-
-// Amplify.configure(awsconfig);
-
-// const signUpConfig = {
-//   header: 'My Customized Sign Up',
-//   hideAllDefaults: true,
-//   defaultCountryCode: '1',
-//   signUpFields: [
-//     {
-//       label: 'My custom email label',
-//       key: 'email',
-//       required: true,
-//       displayOrder: 1,
-//       type: 'string'
-//     }
-//   ]
-// };
 function App() {
   return (
-      <div className="App">
-        <h1>LOGIN WITH FACEBOOK AND GOOGLE</h1>
-        <Facebook></Facebook>
-        <Google></Google>
-      </div>
+    <Router history={Router.browserHistory}>
+    <div className="App">
+    
+      <Switch>
+            <Route exact path="/" component={Login} />
+            <Route path="/Home" component={Home} />
+            <Route path="/SignIn" component={SignIn} />
+            {/* <Route component={NoPageFound} /> */}
+          </Switch>
+          </div>
+    </Router>
+    
+
   );
 }
 
-// export default withAuthenticator(App, {signUpConfig});
 export default App;
