@@ -1,0 +1,8 @@
+.layout {
+    width: 30%;
+    border:1px solid black;
+    margin: auto;
+}
+.imagePicker {
+    display: none;
+}

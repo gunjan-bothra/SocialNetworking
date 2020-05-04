@@ -6,6 +6,7 @@ import Google from './components/google';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import SignIn from './components/signin';
+import Photo from './pages/Camera';
 // import {useRoutes} from 'hookrouter';
 import Home from './pages/Home';
 // import {Route, Link, BrowserRouter as Router, Switch} from 'react-router-dom';
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route path="/Home" component={Home} />
             <Route path="/SignIn" component={SignIn} />
+            <Route path="/Photo" component={Photo} />
             {/* <Route component={NoPageFound} /> */}
           </Switch>
           </div>

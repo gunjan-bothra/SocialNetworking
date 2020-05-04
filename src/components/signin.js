@@ -151,7 +151,7 @@ const SignIn = (props) => {
           autoHideDuration={6000}
           onClose={handleClose}
         >
-          <Alert onClose={handleClose} severity="success">
+          <Alert onClose={handleClose} severity="error">
             {signInData.error.message}
           </Alert>
         </Snackbar>
